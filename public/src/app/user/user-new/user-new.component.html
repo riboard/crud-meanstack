@@ -1,0 +1,34 @@
+<h2>Novo usuário</h2>
+<form (submit)="create()" class="form-horizontal">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="file-upload">
+                    <input id="custom-input" type="file" (change)="fileChangeListener($event)">
+                </div>
+                <img-cropper #cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+                <br>
+                <span class="result rounded" *ngIf="data.image">
+                    <img [src]="data.image" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+                </span>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                <span for="nome">Nome</span>
+                <input class="form-control" type="text" name="nome" placeholder="Nome" [(ngModel)]="newUser.nome" />
+            </div>
+            <div class="form-group">
+                <span for="sobrenome">Sobrenome</span>
+                <input class="form-control" type="text" name="sobrenome" placeholder="Sobrenome" [(ngModel)]="newUser.sobrenome" />
+            </div>
+            <div class="form-group">
+                <span for="email">Email</span>
+                <input class="form-control" type="text" name="email" placeholder="E-mail" [(ngModel)]="newUser.email" />
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit">
+      Cadastrar
+    </button>
+</form>

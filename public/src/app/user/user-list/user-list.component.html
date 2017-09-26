@@ -1,0 +1,38 @@
+<h2>Lista de usuários</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th scope="row"><img src="{{user.foto}}" alt="Foto" width="50px"></th>
+                <td>{{user.nome}}</td>
+                <td>{{user.sobrenome}}</td>
+                <td>{{user.email}}</td>
+
+                <td>
+                    <button class="btn btn-success" (click)="user.editable = !user.editable">
+                        Editar
+                      </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="destroy(user)">
+                        Excluir
+                      </button>
+                </td>
+                <td colspan="6">
+                    <app-user-edit *ngIf="user.editable" [user]="user" (updateUserEvent)="update($event)"></app-user-edit>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

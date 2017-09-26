@@ -1,0 +1,15 @@
+<h1>Editar</h1>
+<form (submit)="update()" class="form-horizontal">
+    <div class="form-group">
+        <input class="form-control" type="text" name="nome" placeholder="Nome" [(ngModel)]="editUser.nome" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="sobrenome" placeholder="Sobrenome" [(ngModel)]="editUser.sobrenome" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" name="email" placeholder="E-mail" [(ngModel)]="editUser.email" />
+    </div>
+    <button class="btn btn-secondary" type="submit">
+    Atualizar
+  </button>
+</form>

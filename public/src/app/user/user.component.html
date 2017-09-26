@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Usuários</h1>
+            <app-user-new (createNewUserEvent)="create($event)"></app-user-new>
+
+            <hr>
+
+            <app-user-list [users]="users" (destroyUserEvent)="destroy($event)" (updateUserEvent)="update($event)">
+            </app-user-list>
+        </div>
+    </div>
+</div>
